@@ -1,7 +1,6 @@
+import FormButton from "@/components/form-btn";
 import FormInput from "@/components/form_input";
-import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/outline";
-import { ChatBubbleBottomCenterIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
+import SocialLogin from "@/components/social-login";
 
 export default function CreateAccount() {
   return (
