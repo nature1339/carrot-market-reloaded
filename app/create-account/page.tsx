@@ -1,3 +1,5 @@
+"use client";
+
 import FormButton from "@/components/form-btn";
 import FormInput from "@/components/form_input";
 import SocialLogin from "@/components/social-login";
@@ -10,24 +12,35 @@ export default function CreateAccount() {
         <h2 className="text-xl">Fill in the form below to join!</h2>
       </div>
       <form className="flex flex-col gap-3">
-        <FormInput type="text" placeholder="Username" required errors={[]} />
-        <FormInput type="email" placeholder="Email" required errors={[]} />
         <FormInput
+          name="username"
+          type="text"
+          placeholder="Username"
+          required
+        />
+        <FormInput name="email" type="email" placeholder="Email" required />
+        <FormInput
+          name="password"
           type="password"
           placeholder="password"
           required
-          errors={[]}
         />
         <FormInput
-          type="Confirm password"
+          name="confirm_password"
+          type="password"
           placeholder="Confirm Password"
           required
-          errors={[]}
         />
 
-        <FormButton loading={false} text="Create account" />
+        <FormButton text="Create account" />
       </form>
       <SocialLogin />
     </div>
   );
+}
+function useFormState(
+  createAccount: (prevState: any, formdata: FormData) => Promise<void>,
+  arg1: null
+): [any, any] {
+  throw new Error("Function not implemented.");
 }
