@@ -16,7 +16,13 @@ export default function LogIn() {
         <h2 className="text-xl">Log in with email and password</h2>
       </div>
       <form action={handleForm} className="flex flex-col gap-3">
-        <FormInput name="email" placeholder="Email" required errors={[]} />
+        <FormInput
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+          errors={[]}
+        />
         <FormInput
           name="password"
           type="password"
@@ -24,10 +30,8 @@ export default function LogIn() {
           required
           errors={[]}
         />
+        <FormButton text="Log in" />
       </form>
-      <span onClick={onClick}>
-        <FormButton loading={false} text="Log in" />
-      </span>
       <SocialLogin />
     </div>
   );
